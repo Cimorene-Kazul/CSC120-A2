@@ -26,7 +26,7 @@ class Computer:
         self.year_made:int = year
         self.price:int = cost
     
-    def printDetails(self):
+    def print_details(self):
         """
         prints all the details in a readable format.
         """
@@ -44,13 +44,13 @@ class Computer:
         """
         return self.description
     
-    def updatePrice(self, new_price:int):
+    def update_price(self, new_price:int):
         """
         changes price to new_price
         """
         self.price = new_price
     
-    def updateOS(self, new_os:str):
+    def update_os(self, new_os:str):
         """
         changes operating system to new_os
         """

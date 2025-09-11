@@ -19,14 +19,14 @@ class ResaleShop:
         print("Adding to inventory...")
         self.inventory.append(computer)
         print("Done.\n")
-        return inventory.index(computer)
+        return self.inventory.index(computer)
     
-    def updatePrice(self, item_id:int, new_price:int):
+    def update_price(self, item_id:int, new_price:int):
         """ 
         Takes in an item_id and a new price, updates the price of the associated computer if it is the inventory, prints error message otherwise.
         """
-        if inventory[item_id] is not None:
-            inventory[item_id].updatePrice(new_price)
+        if self.inventory[item_id] is not None:
+            self.inventory[item_id].update_price(new_price)
         else:
             print("Item", item_id, "not found. Cannot update price.")
   
@@ -35,24 +35,24 @@ class ResaleShop:
         Takes in an item_id, removes the associated computer if it is the inventory, prints error message otherwise
         """
         print("Selling Item ID:", item_id)
-        if inventory[item_id] is not None:
-            inventory.pop(item_id)
+        if self.inventory[item_id] is not None:
+            self.inventory.pop(item_id)
             print("Item", item_id, "sold!")
         else: 
             print("Item", item_id, "not found. Please select another item to sell.")
 
-    def printInventory(self):
+    def print_inventory(self):
         """
         prints all the items in the inventory (if it isn't empty), prints error otherwise
         """
         print("Checking inventory...")
-        if inventory:
+        if self.inventory:
             # For each item
-            for item in inventory:
+            for item in self.inventory:
                 # Print its details
                 print("-" * 21)
-                print(f'Item ID: {inventory.index(item)}')
-                item.printDetails()
+                print(f'Item ID: {self.inventory.index(item)}')
+                item.print_details()
             print("-" * 21)
         else:
             print("No inventory to display.")
@@ -64,19 +64,19 @@ class ResaleShop:
         """
         print("Refurbishing Item ID:", item_id, ", updating OS to", new_os)
         print("Updating inventory...")
-        if inventory[item_id] is not None:
-            computer = inventory[item_id] # locate the computer
+        if self.inventory[item_id] is not None:
+            computer = self.inventory[item_id] # locate the computer
             if int(computer["year_made"]) < 2000:
-                computer.updatePrice(0) # too old to sell, donation only
+                computer.update_price(0) # too old to sell, donation only
             elif int(computer["year_made"]) < 2012:
-                computer.updatePrice(250) # heavily-discounted price on machines 10+ years old
+                computer.update_price(250) # heavily-discounted price on machines 10+ years old
             elif int(computer["year_made"]) < 2018:
-                computer.updatePrice(550) # discounted price on machines 4-to-10 year old machines
+                computer.update_price(550) # discounted price on machines 4-to-10 year old machines
             else:
-                computer.updatePrice(1000) # recent stuff
+                computer.update_price(1000) # recent stuff
 
         if new_os is not None:
-            computer.updateOS(new_os) # update details after installing new OS
+            computer.update_os(new_os) # update details after installing new OS
         else:
             print("Item", item_id, "not found. Please select another item to refurbish.")
         print("Done.\n")
