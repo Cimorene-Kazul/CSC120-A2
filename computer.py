@@ -1,3 +1,4 @@
+from typing import Dict, Optional
 class Computer:
     description: str
     processor_type: str
@@ -24,5 +25,15 @@ class Computer:
         self.operating_system:str = os
         self.year_made:int = year
         self.price:int = cost
+    
+    def updatePrice(self, new_price:int):
+        """
+        changes price to new_price
+        """
+    
+    def updateOS(self, new_os:str):
+        """
+        changes operating system to new_os
+        """
 
     # What methods will you need?
