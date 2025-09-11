@@ -18,7 +18,7 @@ class Computer:
         cost - the price in dollars of the computer - EX: 1500
         """
         # save all the input statistics about the computer
-        self.description:str = des
+        self.description:str = model
         self.processor_type:str = processor
         self.hard_drive_capacity:str = hd_capacity
         self.memory:int = mem
@@ -26,14 +26,32 @@ class Computer:
         self.year_made:int = year
         self.price:int = cost
     
+    def printDetails(self):
+        """
+        prints all the details in a readable format.
+        """
+        print(self.description)
+        print("processor type: "+self.processor_type)
+        print("hard drive capacity: "+str(self.hard_drive_capacity)+" GB memory")
+        print("memory capacity: "+str(self.memory)+"GB RAM")
+        print("operating system: "+self.operating_system)
+        print("year made: "+str(self.year_made))
+        print("price: $"+str(self.price))
+
+    def name(self):
+        """
+        returns the description of self - other classes are not allowed to directly modify class data
+        """
+        return self.description
+    
     def updatePrice(self, new_price:int):
         """
         changes price to new_price
         """
+        self.price = new_price
     
     def updateOS(self, new_os:str):
         """
         changes operating system to new_os
         """
-
-    # What methods will you need?
+        self.operating_system = new_os
