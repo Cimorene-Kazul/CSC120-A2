@@ -38,6 +38,12 @@ class Computer:
         print("year made: "+str(self.year_made))
         print("price: $"+str(self.price))
 
+    def year(self):
+        """
+        returns the year self was made - other classes are not allowed to directly modify class data
+        """
+        return self.year_made
+    
     def name(self):
         """
         returns the description of self - other classes are not allowed to directly modify class data

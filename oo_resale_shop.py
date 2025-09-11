@@ -66,11 +66,11 @@ class ResaleShop:
         print("Updating inventory...")
         if self.inventory[item_id] is not None:
             computer = self.inventory[item_id] # locate the computer
-            if int(computer["year_made"]) < 2000:
+            if int(computer.year()) < 2000:
                 computer.update_price(0) # too old to sell, donation only
-            elif int(computer["year_made"]) < 2012:
+            elif int(computer.year()) < 2012:
                 computer.update_price(250) # heavily-discounted price on machines 10+ years old
-            elif int(computer["year_made"]) < 2018:
+            elif int(computer.year()) < 2018:
                 computer.update_price(550) # discounted price on machines 4-to-10 year old machines
             else:
                 computer.update_price(1000) # recent stuff
