@@ -9,6 +9,7 @@ class Computer:
     price: int
     def __init__(self, model:str, processor:str, hd_capacity:int, mem:int, os:str, year:int, cost:int):
         """
+        Creates a computer with the nessesary attributes as specified.
         model - description of PC, typically model - EX: "Mac Pro (Late 2013)",
         processor - description of PC's processor - EX: "3.5 GHc 6-Core Intel Xeon E5"
         hd_capacity - number of gigabites of memory in hard drive - EX: 1024

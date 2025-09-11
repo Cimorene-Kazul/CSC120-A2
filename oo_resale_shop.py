@@ -3,8 +3,12 @@ from computer import Computer
 
 class ResaleShop:
     inventory:list
-    def __init__(self):
-        self.inventory:list = []
+    def __init__(self, starting_inventory:list=[]):
+        """
+        Creates a computer resale store. 
+        Include in starting_inventory anything you want the store to start with, but it can be ommited if the store starts empty.
+        """
+        self.inventory:list = starting_inventory
 
          # Print a little banner
         print("=" * 21)
