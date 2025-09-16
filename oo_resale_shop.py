@@ -78,9 +78,11 @@ class ResaleShop:
                 computer.update_price(550) # discounted price on machines 4-to-10 year old machines
             else:
                 computer.update_price(1000) # recent stuff
+                
+            computer.refirbish_name()
 
-        if new_os is not None:
-            computer.update_os(new_os) # update details after installing new OS
+            if new_os is not None:
+                computer.update_os(new_os) # update details after installing new OS
         else:
             print("Item", item_id, "not found. Please select another item to refurbish.")
         print("Done.\n")

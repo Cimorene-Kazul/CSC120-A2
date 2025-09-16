@@ -62,3 +62,10 @@ class Computer:
         changes operating system to new_os
         """
         self.operating_system = new_os
+    
+    def refirbish_name(self):
+        """
+        adds " - refirbished" at the end of the description, if it is not there already
+        """
+        if self.description[-11:] != "refirbished":
+            self.description += " - refirbished"
